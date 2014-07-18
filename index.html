@@ -21,14 +21,6 @@
         <h3>Look and Feel</h3>
 
 <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
-    <legend>Hide battery percent text:</legend>
-        <input name="key5" id="key5-1" data-type="int" value="1" checked="checked" type="radio">
-        <label for="key5-1">True</label>
-        <input name="key5" id="key5-0" data-type="int" value="0" type="radio">
-        <label for="key5-0">False</label>
-</fieldset>
-
-<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
     <legend>Hide bluetooth icon:</legend>
         <input name="key6" id="key6-1" data-type="int" value="1" checked="checked" type="radio">
         <label for="key6-1">True</label>
@@ -83,8 +75,8 @@
 
     <div data-role="collapsible">
         <h3>Information and Support</h3>
-<p>Newest watchface version: 0.5.0 internal<br><br>
-Website version: 0.2.0<br><br>
+<p>Newest watchface version: 0.6.1 internal<br><br>
+Website version: 0.3.0<br><br>
 <b>Credits:</b><br> Edwin Finch - Developer<br><br>
 <i>www.edwinfinch.com/pebble/ see all my projects</i><br><br>
 
@@ -119,7 +111,6 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
     <script>
       function saveOptions() {
         var options = {
-          'hidebattery':     Number( $("input[name=key5]:checked").val() ),
           'hidebticon':     Number( $("input[name=key6]:checked").val() ),
           'theme':     Number( $("input[name=key7]:checked").val() ),
           'covertext':     Number( $("input[name=key8]:checked").val() ),
@@ -136,8 +127,6 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
         if (window.localStorage.rlr_settings) {
           ls_pto = JSON.parse(window.localStorage.rlr_settings);
           // the Pebble webview dies on the next line...
-          $("input[name=key5][id=key5-"+ls_pto["hidebattery"]+"]").prop('checked',true);
-          $("input[name=key5]").checkboxradio('refresh');
           $("input[name=key6][id=key6-"+ls_pto["hidebticon"]+"]").prop('checked',true);
           $("input[name=key6]").checkboxradio('refresh');
           $("input[name=key7][id=key7-"+ls_pto["theme"]+"]").prop('checked',true);

@@ -71,6 +71,14 @@
         <input name="key2" id="key2-0" data-type="int" value="0" type="radio">
         <label for="key2-0">False</label>
 </fieldset>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Batterybar style</legend>
+    	<input name="key3" id="key3-1" data-type="int" value="1" checked="checked" type="radio">
+        <label for="key3-1">Circles</label>
+        <input name="key3" id="key3-0" data-type="int" value="0" type="radio">
+        <label for="key3-0">Rectangle</label>
+</fieldset>
 </div>
 
     <div data-role="collapsible">
@@ -117,6 +125,7 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           'covertext':     Number( $("input[name=key8]:checked").val() ),
           'btdisalert':     Number( $("input[name=key1]:checked").val() ),
           'btrealert':     Number( $("input[name=key2]:checked").val() ),
+          'batterybarstyle':     Number( $("input[name=key3]:checked").val() ),
         }
         return options;
       }
@@ -127,18 +136,20 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
         if (window.localStorage.rlr_settings) {
           ls_pto = JSON.parse(window.localStorage.rlr_settings);
           // the Pebble webview dies on the next line...
-          $("input[name=key5][id=key0-"+ls_pto["hidebattery"]+"]").prop('checked',true);
+          $("input[name=key5][id=key5-"+ls_pto["hidebattery"]+"]").prop('checked',true);
           $("input[name=key5]").checkboxradio('refresh');
-          $("input[name=key6][id=key0-"+ls_pto["hidebticon"]+"]").prop('checked',true);
+          $("input[name=key6][id=key6-"+ls_pto["hidebticon"]+"]").prop('checked',true);
           $("input[name=key6]").checkboxradio('refresh');
-          $("input[name=key7][id=key0-"+ls_pto["theme"]+"]").prop('checked',true);
+          $("input[name=key7][id=key7-"+ls_pto["theme"]+"]").prop('checked',true);
           $("input[name=key7]").checkboxradio('refresh');
-          $("input[name=key8][id=key0-"+ls_pto["covertext"]+"]").prop('checked',true);
+          $("input[name=key8][id=key8-"+ls_pto["covertext"]+"]").prop('checked',true);
           $("input[name=key8]").checkboxradio('refresh');
-          $("input[name=key1][id=key0-"+ls_pto["btdisalert"]+"]").prop('checked',true);
+          $("input[name=key1][id=key1-"+ls_pto["btdisalert"]+"]").prop('checked',true);
           $("input[name=key1]").checkboxradio('refresh');
-          $("input[name=key2][id=key0-"+ls_pto["btrealert"]+"]").prop('checked',true);
+          $("input[name=key2][id=key2-"+ls_pto["btrealert"]+"]").prop('checked',true);
           $("input[name=key2]").checkboxradio('refresh');
+          $("input[name=key3][id=key3-"+ls_pto["batterybarstyle"]+"]").prop('checked',true);
+          $("input[name=key3]").checkboxradio('refresh');
         }
        }
         $("#b-cancel").click(function() {

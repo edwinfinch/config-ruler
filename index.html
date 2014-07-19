@@ -43,6 +43,22 @@
         <input name="key8" id="key8-0" data-type="int" value="0" type="radio">
         <label for="key8-0">False</label>
 </fieldset>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Batterybar style</legend>
+    	<input name="key3" id="key3-1" data-type="int" value="1" checked="checked" type="radio">
+        <label for="key3-1">Circles</label>
+        <input name="key3" id="key3-0" data-type="int" value="0" type="radio">
+        <label for="key3-0">Rectangle</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+    <legend>Show actual minute</legend>
+    	<input name="key4" id="key4-1" data-type="int" value="1" checked="checked" type="radio">
+        <label for="key4-1">True</label>
+        <input name="key4" id="key4-0" data-type="int" value="0" type="radio">
+        <label for="key4-0">False</label>
+</fieldset>
     </div>
 
 <div data-role="collapsible">
@@ -62,14 +78,6 @@
         <label for="key2-1">True</label>
         <input name="key2" id="key2-0" data-type="int" value="0" type="radio">
         <label for="key2-0">False</label>
-</fieldset>
-
-<fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
-    <legend>Batterybar style</legend>
-    	<input name="key3" id="key3-1" data-type="int" value="1" checked="checked" type="radio">
-        <label for="key3-1">Circles</label>
-        <input name="key3" id="key3-0" data-type="int" value="0" type="radio">
-        <label for="key3-0">Rectangle</label>
 </fieldset>
 </div>
 
@@ -117,6 +125,7 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           'btdisalert':     Number( $("input[name=key1]:checked").val() ),
           'btrealert':     Number( $("input[name=key2]:checked").val() ),
           'batterybarstyle':     Number( $("input[name=key3]:checked").val() ),
+          'showminute':     Number( $("input[name=key4]:checked").val() ),
         }
         return options;
       }
@@ -139,6 +148,8 @@ Design & idea by Philipp Weder / iPhibse (www.iPhibse.ch) <br><br>
           $("input[name=key2]").checkboxradio('refresh');
           $("input[name=key3][id=key3-"+ls_pto["batterybarstyle"]+"]").prop('checked',true);
           $("input[name=key3]").checkboxradio('refresh');
+          $("input[name=key4][id=key4-"+ls_pto["showminute"]+"]").prop('checked',true);
+          $("input[name=key4]").checkboxradio('refresh');
         }
        }
         $("#b-cancel").click(function() {

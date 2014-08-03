@@ -69,7 +69,7 @@
         <input name="key4" id="key4-0" data-type="int" value="0" type="radio">
         <label for="key4-0">True</label>
 </fieldset>
-<!--
+
 <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
     <legend>Cleaner look</legend>
     <i>This setting makes the highlighter bar shorter, draws a line between it and the 5 min. interval numbers
@@ -80,7 +80,7 @@
         <input name="key5" id="key5-0" data-type="int" value="0" type="radio">
         <label for="key5-0">False</label>
 </fieldset>
--->
+
     </div>
 
 <div data-role="collapsible">
@@ -103,7 +103,6 @@
 </fieldset>
 </div>
 
-<!--
 <div data-role="collapsible">
         <h3>Extras</h3>
 
@@ -117,12 +116,10 @@
 
 </div>
 
--->
-
     <div data-role="collapsible">
         <h3>Information and Support</h3>
-<p>Newest watchface version: 1.0.1-b4_rel<br><br>
-Website version: 1.0.1<br><br>
+<p>Newest watchface version: 1.1.0-b6-rel<br><br>
+Website version: 1.1.0<br><br>
 <b>Credits:</b><br>
 Edwin Finch - Developer<br>
 
@@ -167,8 +164,8 @@ www.iPhibse.ch <br><br>
           'btrealert':     Number( $("input[name=key2]:checked").val() ),
           'batterybarstyle':     Number( $("input[name=key3]:checked").val() ),
           'showminute':     Number( $("input[name=key4]:checked").val() ),
-          //'lang':     Number( $("input[name=key9]:checked").val() ),
-          //'cleanerlook':     Number( $("input[name=key5]:checked").val() ),
+          'lang':     Number( $("input[name=key9]:checked").val() ),
+          'cleanerlook':     Number( $("input[name=key5]:checked").val() ),
         }
         return options;
       }
@@ -193,12 +190,10 @@ www.iPhibse.ch <br><br>
           $("input[name=key3]").checkboxradio('refresh');
           $("input[name=key4][id=key4-"+ls_pto["showminute"]+"]").prop('checked',true);
           $("input[name=key4]").checkboxradio('refresh');
-          /*
           $("input[name=key5][id=key5-"+ls_pto["cleanerlook"]+"]").prop('checked',true);
           $("input[name=key5]").checkboxradio('refresh');
           $("input[name=key9][id=key9-"+ls_pto["lang"]+"]").prop('checked',true);
           $("input[name=key9]").checkboxradio('refresh');
-          */
         }
        }
         $("#b-cancel").click(function() {
